@@ -12,22 +12,25 @@ const FILE_EXTEN = {
 
 try {
 
-  await page.goto('https://learnwebcode.github.io/practice-requests/');
-
-  await page.locator("#clickme").click()
+  await page.goto('https://premiosdipanda.ao/register');
 
 
-  await page.locator("#ourfield").fill('Yellow')
-  await page.locator("#ourform > button").click()
+  await page.locator("input").fill('angolanomiitp@gmail.com')
+
+  await page.locator("button").click()
+
   await page.close()
   await browser.close();
 
 
 } catch (error) {
+  await page.close()
+  await browser.close();
   console.log("Somthing is wrong with this website\n")
   console.error('Error:', error);
   browser.close()
 }
+
 
 
 
